@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85D0BA0D29082A2200D7309E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BA0C29082A2200D7309E /* AppDelegate.swift */; };
+		8598357629088EA200EDE361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598357529088EA200EDE361 /* AppDelegate.swift */; };
 		85D0BA0F29082A2200D7309E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BA0E29082A2200D7309E /* SceneDelegate.swift */; };
-		85D0BA1129082A2200D7309E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BA1029082A2200D7309E /* ViewController.swift */; };
-		85D0BA1429082A2200D7309E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BA1229082A2200D7309E /* Main.storyboard */; };
+		85D0BA1129082A2200D7309E /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BA1029082A2200D7309E /* CurrenciesViewController.swift */; };
 		85D0BA1629082A2300D7309E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BA1529082A2300D7309E /* Assets.xcassets */; };
 		85D0BA1929082A2300D7309E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BA1729082A2300D7309E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		85D0BA0929082A2200D7309E /* sampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		85D0BA0C29082A2200D7309E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8598357529088EA200EDE361 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85D0BA0929082A2200D7309E /* CurrenciesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrenciesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D0BA0E29082A2200D7309E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85D0BA1029082A2200D7309E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		85D0BA1329082A2200D7309E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85D0BA1029082A2200D7309E /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
 		85D0BA1529082A2300D7309E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85D0BA1829082A2300D7309E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85D0BA1A29082A2300D7309E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,7 +38,7 @@
 		85D0BA0029082A2200D7309E = {
 			isa = PBXGroup;
 			children = (
-				85D0BA0B29082A2200D7309E /* sampleApp */,
+				85D0BA0B29082A2200D7309E /* CurrenciesApp */,
 				85D0BA0A29082A2200D7309E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +46,30 @@
 		85D0BA0A29082A2200D7309E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85D0BA0929082A2200D7309E /* sampleApp.app */,
+				85D0BA0929082A2200D7309E /* CurrenciesApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		85D0BA0B29082A2200D7309E /* sampleApp */ = {
+		85D0BA0B29082A2200D7309E /* CurrenciesApp */ = {
 			isa = PBXGroup;
 			children = (
-				85D0BA0C29082A2200D7309E /* AppDelegate.swift */,
+				85D0BA1029082A2200D7309E /* CurrenciesViewController.swift */,
 				85D0BA0E29082A2200D7309E /* SceneDelegate.swift */,
-				85D0BA1029082A2200D7309E /* ViewController.swift */,
-				85D0BA1229082A2200D7309E /* Main.storyboard */,
+				8598357529088EA200EDE361 /* AppDelegate.swift */,
 				85D0BA1529082A2300D7309E /* Assets.xcassets */,
 				85D0BA1729082A2300D7309E /* LaunchScreen.storyboard */,
 				85D0BA1A29082A2300D7309E /* Info.plist */,
 			);
-			path = sampleApp;
+			path = CurrenciesApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		85D0BA0829082A2200D7309E /* sampleApp */ = {
+		85D0BA0829082A2200D7309E /* CurrenciesApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85D0BA1D29082A2300D7309E /* Build configuration list for PBXNativeTarget "sampleApp" */;
+			buildConfigurationList = 85D0BA1D29082A2300D7309E /* Build configuration list for PBXNativeTarget "CurrenciesApp" */;
 			buildPhases = (
 				85D0BA0529082A2200D7309E /* Sources */,
 				85D0BA0629082A2200D7309E /* Frameworks */,
@@ -82,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = sampleApp;
+			name = CurrenciesApp;
 			productName = sampleApp;
-			productReference = 85D0BA0929082A2200D7309E /* sampleApp.app */;
+			productReference = 85D0BA0929082A2200D7309E /* CurrenciesApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 85D0BA0429082A2200D7309E /* Build configuration list for PBXProject "sampleApp" */;
+			buildConfigurationList = 85D0BA0429082A2200D7309E /* Build configuration list for PBXProject "CurrenciesApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				85D0BA0829082A2200D7309E /* sampleApp */,
+				85D0BA0829082A2200D7309E /* CurrenciesApp */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +124,6 @@
 			files = (
 				85D0BA1929082A2300D7309E /* LaunchScreen.storyboard in Resources */,
 				85D0BA1629082A2300D7309E /* Assets.xcassets in Resources */,
-				85D0BA1429082A2200D7309E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +134,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85D0BA1129082A2200D7309E /* ViewController.swift in Sources */,
-				85D0BA0D29082A2200D7309E /* AppDelegate.swift in Sources */,
+				85D0BA1129082A2200D7309E /* CurrenciesViewController.swift in Sources */,
 				85D0BA0F29082A2200D7309E /* SceneDelegate.swift in Sources */,
+				8598357629088EA200EDE361 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		85D0BA1229082A2200D7309E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				85D0BA1329082A2200D7309E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		85D0BA1729082A2300D7309E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +277,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DYK4W76333;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = sampleApp/Info.plist;
+				INFOPLIST_FILE = CurrenciesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,7 +287,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fernandopena.sampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fernandopena.currenciesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,10 +304,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DYK4W76333;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = sampleApp/Info.plist;
+				INFOPLIST_FILE = CurrenciesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -328,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fernandopena.sampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fernandopena.currenciesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		85D0BA0429082A2200D7309E /* Build configuration list for PBXProject "sampleApp" */ = {
+		85D0BA0429082A2200D7309E /* Build configuration list for PBXProject "CurrenciesApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85D0BA1B29082A2300D7309E /* Debug */,
@@ -348,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85D0BA1D29082A2300D7309E /* Build configuration list for PBXNativeTarget "sampleApp" */ = {
+		85D0BA1D29082A2300D7309E /* Build configuration list for PBXNativeTarget "CurrenciesApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85D0BA1E29082A2300D7309E /* Debug */,

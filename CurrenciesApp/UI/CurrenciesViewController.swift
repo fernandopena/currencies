@@ -8,8 +8,19 @@
 import UIKit
 
 class CurrenciesViewController: UITableViewController {
+    internal init(dataSource: CurrencyViewDataSourceProtocol) {
+        self.dataSource = dataSource
+        self.currencies = []
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    var currencies: [CoindeskResponseDTO.Coin] = [] {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let dataSource: CurrencyViewDataSourceProtocol
+    
+    var currencies: [CurrencyViewData] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
@@ -19,10 +30,10 @@ class CurrenciesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoindeskApiClient().fetchCurrencies { [weak self] result in
+        dataSource.fetchCurrenciesViewData { [weak self] result in
             switch result {
-            case .success(let dto):
-                self?.currencies = dto.data.map { $1 }
+            case .success(let currencies):
+                self?.currencies = currencies
             case .failure(let error):
                 print(error)
             }
@@ -44,7 +55,7 @@ class CurrenciesViewController: UITableViewController {
         }()
         let currency = currencies[indexPath.row]
         cell.textLabel?.text = currency.name
-        cell.detailTextLabel?.text = "\(currency.rate)"
+        cell.detailTextLabel?.text = currency.rate
         return cell
     }
 }

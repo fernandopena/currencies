@@ -9,17 +9,34 @@ import UIKit
 
 class CurrenciesViewController: UITableViewController {
     
-    var currencies: [CoindeskResponseDTO.Coin] = [] {
+    let dataSource: CurrenciesDataSourceProtocol
+    
+    var currencies: [CoindeskResponseDTO.Coin] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
             }
         }
     }
+
+    // MARK: - Init
     
+    init(dataSource: CurrenciesDataSourceProtocol) {
+        self.dataSource = dataSource
+        self.currencies = []
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+    // MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoindeskApiClient().fetchCurrencies { [weak self] result in
+        dataSource.fetchCurrencies { [weak self] result in
             switch result {
             case .success(let dto):
                 self?.currencies = dto.data.map { $1 }

@@ -7,17 +7,6 @@
 
 import UIKit
 
-struct CoindeskResponseDTO: Decodable {
-    let statusCode: Int
-    let message: String
-    let data: [String: Coin]
-    
-    struct Coin: Decodable {
-        let iso, name, slug: String
-        let rate: Double
-    }
-}
-
 class CurrenciesViewController: UITableViewController {
     
     var currencies: [CoindeskResponseDTO.Coin] = [] {
@@ -30,16 +19,14 @@ class CurrenciesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://production.api.coindesk.com/v2/exchange-rates")!
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let dto = try JSONDecoder().decode(CoindeskResponseDTO.self, from: data)
+        CoindeskApiClient().fetchCurrencies { [weak self] result in
+            switch result {
+            case .success(let dto):
                 self?.currencies = dto.data.map { $1 }
-            } catch {
+            case .failure(let error):
                 print(error)
             }
-        }.resume()
+        }
     }
     
     // MARK: - UITableViewDataSource

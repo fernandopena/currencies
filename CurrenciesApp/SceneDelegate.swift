@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func setupWindow() {
-        window?.rootViewController = CurrenciesViewController()
+        window?.rootViewController = CurrenciesViewController(dataSource: CoindeskApiClient())
         window?.makeKeyAndVisible()
     }
 }

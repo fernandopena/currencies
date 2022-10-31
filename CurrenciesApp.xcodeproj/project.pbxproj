@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		856096DD291076F800A28B51 /* CurrenciesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856096DC291076F800A28B51 /* CurrenciesRepositoryProtocol.swift */; };
+		856096E02910773E00A28B51 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856096DF2910773E00A28B51 /* Currency.swift */; };
 		85761255290C04A90005AC33 /* CoindeskResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85761254290C04A90005AC33 /* CoindeskResponseDTO.swift */; };
 		85761257290C04C50005AC33 /* CoindeskApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85761256290C04C50005AC33 /* CoindeskApiClient.swift */; };
 		8598357629088EA200EDE361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598357529088EA200EDE361 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		856096DC291076F800A28B51 /* CurrenciesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		856096DF2910773E00A28B51 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		85761254290C04A90005AC33 /* CoindeskResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskResponseDTO.swift; sourceTree = "<group>"; };
 		85761256290C04C50005AC33 /* CoindeskApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskApiClient.swift; sourceTree = "<group>"; };
 		8598357529088EA200EDE361 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		856096D9291076DD00A28B51 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				85761253290C04990005AC33 /* Coindesk */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		856096DA291076E400A28B51 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				85D0BA1029082A2200D7309E /* CurrenciesViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		856096DB291076EA00A28B51 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				856096DE2910773300A28B51 /* Entities */,
+				856096DC291076F800A28B51 /* CurrenciesRepositoryProtocol.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		856096DE2910773300A28B51 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				856096DF2910773E00A28B51 /* Currency.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		85761253290C04990005AC33 /* Coindesk */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +104,9 @@
 		85D0BA0B29082A2200D7309E /* CurrenciesApp */ = {
 			isa = PBXGroup;
 			children = (
-				85D0BA1029082A2200D7309E /* CurrenciesViewController.swift */,
-				85761253290C04990005AC33 /* Coindesk */,
+				856096DB291076EA00A28B51 /* Domain */,
+				856096DA291076E400A28B51 /* Presentation */,
+				856096D9291076DD00A28B51 /* Data */,
 				85D0BA0E29082A2200D7309E /* SceneDelegate.swift */,
 				8598357529088EA200EDE361 /* AppDelegate.swift */,
 				85D0BA1529082A2300D7309E /* Assets.xcassets */,
@@ -148,10 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856096DD291076F800A28B51 /* CurrenciesRepositoryProtocol.swift in Sources */,
 				85D0BA1129082A2200D7309E /* CurrenciesViewController.swift in Sources */,
 				85D0BA0F29082A2200D7309E /* SceneDelegate.swift in Sources */,
 				85761255290C04A90005AC33 /* CoindeskResponseDTO.swift in Sources */,
 				85761257290C04C50005AC33 /* CoindeskApiClient.swift in Sources */,
+				856096E02910773E00A28B51 /* Currency.swift in Sources */,
 				8598357629088EA200EDE361 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

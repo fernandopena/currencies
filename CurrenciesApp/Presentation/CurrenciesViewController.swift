@@ -9,9 +9,9 @@ import UIKit
 
 class CurrenciesViewController: UITableViewController {
     
-    let dataSource: CoindeskCurrenciesDataSourceProtocol
+    let repository: CurrenciesRepositoryProtocol
     
-    var currencies: [CoindeskResponseDTO.Coin] {
+    var currencies: [Currency] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
@@ -21,8 +21,8 @@ class CurrenciesViewController: UITableViewController {
     
     // MARK: - Init
     
-    internal init(dataSource: CoindeskCurrenciesDataSourceProtocol) {
-        self.dataSource = dataSource
+    internal init(repository: CurrenciesRepositoryProtocol) {
+        self.repository = repository
         self.currencies = []
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,10 +35,14 @@ class CurrenciesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.getExchangeRates { [weak self] result in
+        loadData()
+    }
+    
+    func loadData() {
+        repository.fetchCurrencies { [weak self] result in
             switch result {
-            case .success(let dto):
-                self?.currencies = dto.data.map { $1 }
+            case .success(let currencies):
+                self?.currencies = currencies
             case .failure(let error):
                 print(error)
             }

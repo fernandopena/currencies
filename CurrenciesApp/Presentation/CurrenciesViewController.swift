@@ -8,8 +8,20 @@
 import UIKit
 
 class CurrenciesViewController: UITableViewController {
-    internal init(dataSource: CurrencyViewDataSourceProtocol) {
-        self.dataSource = dataSource
+    let repository: CurrenciesRepositoryProtocol
+    
+    var currencies: [Currency] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: -  Init
+    
+    internal init(repository: CurrenciesRepositoryProtocol) {
+        self.repository = repository
         self.currencies = []
         super.init(nibName: nil, bundle: nil)
     }
@@ -18,19 +30,11 @@ class CurrenciesViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let dataSource: CurrencyViewDataSourceProtocol
-    
-    var currencies: [CurrencyViewData] {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
-            }
-        }
-    }
+    // MARK: -  View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.fetchCurrenciesViewData { [weak self] result in
+        repository.fetchCurrencies { [weak self] result in
             switch result {
             case .success(let currencies):
                 self?.currencies = currencies
@@ -55,7 +59,7 @@ class CurrenciesViewController: UITableViewController {
         }()
         let currency = currencies[indexPath.row]
         cell.textLabel?.text = currency.name
-        cell.detailTextLabel?.text = currency.rate
+        cell.detailTextLabel?.text = "\(currency.rate)"
         return cell
     }
 }

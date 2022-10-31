@@ -8,7 +8,7 @@
 import Foundation
 
 class CoindeskApiClient {
-    func fetchCurrencies(completionHandler: @escaping (Result<CoindeskResponseDTO, Error>) -> Void) {
+    func getExchangeRates(completionHandler: @escaping (Result<CoindeskResponseDTO, Error>) -> Void) {
         let url = URL(string: "https://production.api.coindesk.com/v2/exchange-rates")!
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {

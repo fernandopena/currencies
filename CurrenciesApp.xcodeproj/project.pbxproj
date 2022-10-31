@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		852F528E290C68BE00B511FD /* CurrencyViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F528D290C68BE00B511FD /* CurrencyViewData.swift */; };
-		852F5290290C68CE00B511FD /* CurrencyViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F528F290C68CE00B511FD /* CurrencyViewDataSource.swift */; };
 		852F5294290C6A8200B511FD /* CoinbaseApiClientAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F5293290C6A8200B511FD /* CoinbaseApiClientAdapter.swift */; };
+		856096CB2910574100A28B51 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856096CA2910574100A28B51 /* Currency.swift */; };
+		856096CF2910578300A28B51 /* CurrenciesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856096CE2910578300A28B51 /* CurrenciesRepositoryProtocol.swift */; };
 		85761255290C04A90005AC33 /* CoindeskResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85761254290C04A90005AC33 /* CoindeskResponseDTO.swift */; };
 		85761257290C04C50005AC33 /* CoindeskApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85761256290C04C50005AC33 /* CoindeskApiClient.swift */; };
 		8598357629088EA200EDE361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598357529088EA200EDE361 /* AppDelegate.swift */; };
@@ -20,9 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		852F528D290C68BE00B511FD /* CurrencyViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewData.swift; sourceTree = "<group>"; };
-		852F528F290C68CE00B511FD /* CurrencyViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewDataSource.swift; sourceTree = "<group>"; };
 		852F5293290C6A8200B511FD /* CoinbaseApiClientAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseApiClientAdapter.swift; sourceTree = "<group>"; };
+		856096CA2910574100A28B51 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		856096CE2910578300A28B51 /* CurrenciesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		85761254290C04A90005AC33 /* CoindeskResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskResponseDTO.swift; sourceTree = "<group>"; };
 		85761256290C04C50005AC33 /* CoindeskApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskApiClient.swift; sourceTree = "<group>"; };
 		8598357529088EA200EDE361 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,37 +45,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		852F528C290C68AA00B511FD /* UI */ = {
+		852F528C290C68AA00B511FD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				85D0BA1029082A2200D7309E /* CurrenciesViewController.swift */,
-				852F528F290C68CE00B511FD /* CurrencyViewDataSource.swift */,
-				852F528D290C68BE00B511FD /* CurrencyViewData.swift */,
 			);
-			path = UI;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		852F5291290C693200B511FD /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				852F5293290C6A8200B511FD /* CoinbaseApiClientAdapter.swift */,
 				85761253290C04990005AC33 /* Coindesk */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		852F5292290C6A7500B511FD /* Composition */ = {
+		856096C92910572E00A28B51 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				852F5293290C6A8200B511FD /* CoinbaseApiClientAdapter.swift */,
+				856096CD2910576D00A28B51 /* Repositories */,
+				856096CC2910575B00A28B51 /* Entities */,
 			);
-			path = Composition;
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		856096CC2910575B00A28B51 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				856096CA2910574100A28B51 /* Currency.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		856096CD2910576D00A28B51 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				856096CE2910578300A28B51 /* CurrenciesRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		856096D029105B8900A28B51 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				85761254290C04A90005AC33 /* CoindeskResponseDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		85761253290C04990005AC33 /* Coindesk */ = {
 			isa = PBXGroup;
 			children = (
-				85761254290C04A90005AC33 /* CoindeskResponseDTO.swift */,
 				85761256290C04C50005AC33 /* CoindeskApiClient.swift */,
+				856096D029105B8900A28B51 /* DTO */,
 			);
 			path = Coindesk;
 			sourceTree = "<group>";
@@ -99,9 +123,9 @@
 		85D0BA0B29082A2200D7309E /* CurrenciesApp */ = {
 			isa = PBXGroup;
 			children = (
+				856096C92910572E00A28B51 /* Domain */,
 				852F5291290C693200B511FD /* Data */,
-				852F528C290C68AA00B511FD /* UI */,
-				852F5292290C6A7500B511FD /* Composition */,
+				852F528C290C68AA00B511FD /* Presentation */,
 				85D0BA0E29082A2200D7309E /* SceneDelegate.swift */,
 				8598357529088EA200EDE361 /* AppDelegate.swift */,
 				85D0BA1529082A2300D7309E /* Assets.xcassets */,
@@ -181,14 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856096CB2910574100A28B51 /* Currency.swift in Sources */,
 				85D0BA1129082A2200D7309E /* CurrenciesViewController.swift in Sources */,
 				85D0BA0F29082A2200D7309E /* SceneDelegate.swift in Sources */,
 				85761255290C04A90005AC33 /* CoindeskResponseDTO.swift in Sources */,
 				85761257290C04C50005AC33 /* CoindeskApiClient.swift in Sources */,
 				8598357629088EA200EDE361 /* AppDelegate.swift in Sources */,
-				852F528E290C68BE00B511FD /* CurrencyViewData.swift in Sources */,
-				852F5290290C68CE00B511FD /* CurrencyViewDataSource.swift in Sources */,
 				852F5294290C6A8200B511FD /* CoinbaseApiClientAdapter.swift in Sources */,
+				856096CF2910578300A28B51 /* CurrenciesRepositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
